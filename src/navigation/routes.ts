@@ -4,7 +4,7 @@ import Testing from '../views/adminPanel/testing/Testing';
 interface IRoute {
   path: string;
   name: string;
-  component: () => JSX;
+  component: () => JSX.Element;
   type: string;
 }
 
