@@ -1,7 +1,16 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import '../../assets/css/landingPageMenu.css';
+import 'src/assets/css/landingPageMenu.css';
 import { FaBars, FaTimes } from 'react-icons/fa';
+
+const menuList = [
+  { title: 'Home', url: '/home' },
+  { title: 'About Me', url: '/about-me' },
+  { title: 'Skills', url: '/skills' },
+  { title: 'Portfolio', url: '/portfolio' },
+  { title: 'Experience', url: '/experience' },
+  { title: 'Contact Me', url: '/contact-me' },
+];
 
 const Header = () => {
   const location = useLocation();
@@ -51,36 +60,13 @@ const Header = () => {
       />
       <nav className="l-menu">
         <ul>
-          <li className={setActive('/home')}>
-            <NavLink to="/home" onClick={onSelectMenu}>
-              Home
-            </NavLink>
-          </li>
-          <li className={setActive('/about-me')}>
-            <NavLink to="/about-me" onClick={onSelectMenu}>
-              About Me
-            </NavLink>
-          </li>
-          <li className={setActive('/skills')}>
-            <NavLink to="/skills" onClick={onSelectMenu}>
-              Skills
-            </NavLink>
-          </li>
-          <li className={setActive('/portfolio')}>
-            <NavLink to="/portfolio" onClick={onSelectMenu}>
-              Portfolio
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/experience" onClick={onSelectMenu}>
-              Experience
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact-me" onClick={onSelectMenu}>
-              Contact Me
-            </NavLink>
-          </li>
+          {menuList.map(({ url, title }, index) => (
+            <li key={index} className={setActive(url)}>
+              <NavLink to={url} onClick={onSelectMenu}>
+                {title}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

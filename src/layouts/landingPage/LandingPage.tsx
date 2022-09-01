@@ -1,29 +1,19 @@
 import React from 'react';
-//import { Layout } from 'antd';
-import '../../assets/css/landingPage.css';
-import Header from './Header';
-import Footer from './Footer';
+import 'src/assets/css/landingPage.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const LandingPage: React.FC = ({ children }) => {
   return (
-    <>
-      <div className="l-container">
-        <header className="l-header">
-          <Header />
-        </header>
-        <main className="l-content">{children}</main>
-        <footer className="l-footer">
-          <Footer />
-        </footer>
-      </div>
-      {/* <Layout style={{ minHeight: '100vh' }}>
-            <Header />
-            <Layout.Content style={{ backgroundColor: '#F9F9F9', display: 'flex' }}>
-               {children}
-            </Layout.Content>
-            <Footer />
-         </Layout> */}
-    </>
+    <div className="l-container">
+      <header className="l-header">
+        <Header />
+      </header>
+      <main className="l-content">{children}</main>
+      <footer className="l-footer">
+        <Footer />
+      </footer>
+    </div>
   );
 };
 
