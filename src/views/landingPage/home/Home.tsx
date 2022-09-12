@@ -1,5 +1,4 @@
-import { Button } from 'antd';
-import avatar from '../../../assets/developer.jpg';
+import avatar from 'src/assets/developer.jpg';
 
 const Home = () => {
   return (
@@ -8,17 +7,8 @@ const Home = () => {
         <img src={avatar} alt="Avatar" className="home-avatar" />
 
         <div className="home-description">
-          <span className="home-text" style={{ fontSize: 45 }}>
-            Carlos Sosa Q.
-          </span>
-          <span className="home-text" style={{ fontSize: 20, marginTop: -10 }}>
-            Desarrollador Web y Móvil
-          </span>
-        </div>
-        <div
-          style={{ display: 'flex', justifyContent: 'center', marginTop: 15 }}
-        >
-          <Button>Download CV</Button>
+          <span className="home-text-name">Carlos J. Sosa Q.</span>
+          <span className="home-text-profession">Frontend Developer</span>
         </div>
       </div>
     </div>
