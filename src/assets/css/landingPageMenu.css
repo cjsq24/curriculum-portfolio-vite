@@ -1,3 +1,11 @@
+:root {
+  --primary: #252323;
+  --secondary: #70798c;
+  --light-white: #f5f1ed;
+  --beige: #dad2bc;
+  --brown: #a99985;
+}
+
 .l-menu-header {
   background: rgb(37, 35, 35);
   background: linear-gradient(
@@ -5,15 +13,17 @@
     rgba(37, 35, 35, 1) 0%,
     rgba(112, 121, 140, 1) 100%
   );
-  height: 100%;
+  position: fixed;
+  width: 100%;
+  height: 50px;
   display: flex;
   justify-content: flex-end;
+  z-index: 15;
 }
 
 .l-menu {
-  height: 100%;
-  overflow: hidden;
   animation: slideInMenu 0.3s ease-out;
+  position: relative;
 }
 
 @keyframes slideInMenu {
@@ -31,73 +41,83 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  padding-left: 0;
 }
 
 .l-menu li {
   text-decoration: none;
   list-style: none;
   cursor: pointer;
-  height: 100%;
   vertical-align: center;
 }
 
-.l-menu li:hover {
-  transition: all 0.1s;
-}
-
 .l-menu a {
-  color: #f5f1ed;
+  color: var(--light-white);
   padding: 0 15px;
   width: 100%;
   font-size: 14px;
   font-weight: 600;
   display: block;
   text-align: center;
-  height: 50px;
   line-height: 50px;
 }
 
-.l-menu li a:hover {
-  color: #a99985;
-  border-bottom: 4px solid #a99985;
+.l-menu li a:hover:not(.active) {
+  color: var(--beige);
   transition: all 0.2s;
-}
-
-.l-menu .active {
-  height: 100%;
+  transform: scale(1.05);
 }
 
 .l-menu .active a {
-  height: 100%;
-  color: #a99985;
-  border-bottom: 4px solid #a99985;
+  color: var(--beige);
+}
+
+.l-menu-indicator {
+  width: 20px;
+  height: 4px;
+  display: block;
+  background-color: var(--beige);
+  position: absolute;
+  top: 38px;
+  transition: all 0.2s;
 }
 
 #responsive-check {
   display: none;
 }
 
-.l-toggle-menu {
+.l-responsive-menu-switch {
+  height: 50px;
+  width: 50px;
   display: none;
 }
 
-.l-toggle-menu label {
-  padding: 5px;
-  width: 50px;
-  text-align: center;
-  cursor: pointer;
+.l-responsive-menu-switch div {
+  width: 37px;
+  height: 3px;
+  background-color: var(--light-white);
+  transition: transform 0.3s, opacity 0.2s;
+  transform-origin: right;
 }
 
 @media (max-width: 600px) {
   .l-menu {
     position: absolute;
-    background-color: #84b6f4;
+    background: rgb(37, 35, 35);
+    background: linear-gradient(
+      100deg,
+      rgba(37, 35, 35, 1) 0%,
+      rgba(112, 121, 140, 1) 100%
+    );
     width: 100%;
-    margin-top: -100%;
-    /* margin-top: 40px; */
-    transition: all 0.2s;
-    z-index: 100;
+    opacity: 0;
+    margin-top: 50px;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  .l-menu-indicator {
+    display: none;
   }
 
   .l-menu ul {
@@ -105,24 +125,32 @@
   }
 
   .l-menu li {
-    border-top: 1px solid #fff;
+    border-top: 1px solid rgb(218, 210, 188, 0.2);
+    width: 100%;
   }
 
-  /* .l-menu-header label {
-      display: block;
-      height: 50px;
-      width: 50px;
-   } */
+  #responsive-check:checked ~ .l-responsive-menu-switch ~ .l-menu {
+    opacity: 1;
+    pointer-events: all;
+  }
 
-  .l-toggle-menu {
+  #responsive-check:checked ~ .l-responsive-menu-switch div:first-child {
+    transform: rotate(-45deg);
+  }
+
+  #responsive-check:checked ~ .l-responsive-menu-switch div:nth-child(2) {
+    opacity: 0;
+  }
+
+  #responsive-check:checked ~ .l-responsive-menu-switch div:last-child {
+    transform: rotate(45deg);
+  }
+
+  .l-responsive-menu-switch {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100%;
-    background-color: #4a79b2;
-  }
-
-  #responsive-check:checked ~ .l-menu {
-    margin-top: 50px;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
   }
 }

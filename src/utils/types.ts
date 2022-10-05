@@ -15,3 +15,15 @@ export interface IPortfolio {
   images?: string[];
   description: string;
 }
+
+export enum EVisibilityModal {
+  Hidden = 'hidden',
+  Visible = 'visible',
+}
+
+export interface IExperienceList {
+  title: string;
+  rol: string;
+  date: string;
+  details: string;
+}

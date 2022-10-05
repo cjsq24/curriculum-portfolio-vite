@@ -8,6 +8,8 @@ import Home from '../views/landingPage/home/Home';
 import AboutMe from '../views/landingPage/aboutMe/AboutMe';
 import Skills from '../views/landingPage/skills/Skills';
 import Portfolio from '../views/landingPage/portfolio/Portfolio';
+import Experience from '../views/landingPage/experience/Experience';
+import ContactMe from '../views/landingPage/contactMe';
 
 const Navigation = () => {
   return (
@@ -22,6 +24,8 @@ const Navigation = () => {
         <LandingRoute path="/about-me" component={AboutMe} />
         <LandingRoute path="/skills" component={Skills} />
         <LandingRoute path="/portfolio" component={Portfolio} />
+        <LandingRoute path="/experience" component={Experience} />
+        <LandingRoute path="/contact-me" component={ContactMe} />
 
         <Route path="*">
           <h1>Error 404</h1>
