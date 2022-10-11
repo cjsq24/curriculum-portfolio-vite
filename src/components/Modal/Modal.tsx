@@ -5,9 +5,15 @@ interface IProps {
   visibilityModal: EVisibilityModal;
   setVisibilityModal: (value: EVisibilityModal) => void;
   children?: JSX.Element;
+  onClose?: () => void;
 }
 
-const Modal = ({ visibilityModal, setVisibilityModal, children }: IProps) => {
+const Modal = ({
+  visibilityModal,
+  setVisibilityModal,
+  children,
+  onClose,
+}: IProps) => {
   useEffect(() => {
     const backgroundModal = document.querySelector('.g-modal');
     backgroundModal?.addEventListener('click', closeModalIfClickOut);
@@ -25,6 +31,7 @@ const Modal = ({ visibilityModal, setVisibilityModal, children }: IProps) => {
         document.documentElement.style.setProperty('--visibility', 'hidden');
       }, 200);
       setVisibilityModal(EVisibilityModal.Hidden);
+      onClose?.();
     }
   }
 

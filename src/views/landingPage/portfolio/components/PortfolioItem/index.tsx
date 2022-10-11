@@ -1,26 +1,26 @@
 import React from 'react';
 import { IPortfolio } from 'src/utils/types';
+import { Carousel } from 'src/components';
 
 interface IProps {
   item: IPortfolio;
   index?: number;
-  showDetailButton?: boolean;
+  isModal?: boolean;
 }
 
-const PortfolioItem = ({ item, index, showDetailButton }: IProps) => {
+const PortfolioItem = ({ item, index, isModal }: IProps) => {
   return (
-    <article className="l-portfolio-card-content">
+    <article
+      className={`l-portfolio-card-content ${isModal && 'no-selectable'}`}
+      id={`portfolio-${index}`}
+    >
       <picture>
-        <img src={item?.images?.[0]} alt={item.title} />
+        {isModal && <Carousel images={item.images} />}
+        {!isModal && <img src={item?.images?.[0]} alt={item.title} />}
       </picture>
       <footer>
         <div>
           <span>{item.title}</span>
-          {showDetailButton && (
-            <button id={`portfolio-${index}`} className="button-details">
-              Details
-            </button>
-          )}
         </div>
         <p>{item.description}</p>
       </footer>

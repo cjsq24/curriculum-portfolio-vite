@@ -288,12 +288,14 @@
   background: var(--brown);
   border-radius: 10px;
   overflow: hidden;
+  transition: transform 0.2s;
   /* box-shadow: 0px 5px 40px 2px rgb(0 0 0 / 10%); */
 }
 
 .l-portfolio-card-content picture {
   display: flex;
   justify-content: center;
+  /* pointer-events: none; */
 }
 
 .l-portfolio-card-content picture img {
@@ -304,11 +306,13 @@
 
 .l-portfolio-card-content footer {
   padding: 20px;
+  /* pointer-events: none; */
 }
 
 .l-portfolio-card-content footer div {
   display: flex;
   justify-content: space-between;
+  /* pointer-events: none; */
 }
 
 .l-portfolio-card-content footer span {
@@ -337,6 +341,10 @@
   -webkit-line-clamp: 2; /* number of lines to show */
   line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+.l-portfolio-card-content:hover:not(.no-selectable) {
+  transform: scale(1.02);
 }
 
 .link-to-github {
