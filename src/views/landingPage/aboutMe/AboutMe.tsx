@@ -24,7 +24,7 @@ const AboutMe = () => {
           ))}
         </div>
         <div className="l-about-vertical-line" />
-        <div className="l-about-horizontal-line hidden-xs" />
+        <div className="l-about-horizontal-line show-xs" />
         <div className="l-about-me-information">
           <span className="l-about-me-content-title">About me</span>
           <div className="l-about-horizontal-line" />

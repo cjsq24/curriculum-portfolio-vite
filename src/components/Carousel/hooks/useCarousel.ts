@@ -71,6 +71,10 @@ const useCarousel = ({ images, currentTarget, setCurrentTarget }: TProps) => {
     };
     window.addEventListener('resize', setWidthContent);
     window.addEventListener('resize', resizeTranslate);
+    return () => {
+      window.removeEventListener('resize', setWidthContent);
+      window.removeEventListener('resize', resizeTranslate);
+    };
   }, [containerWidth, currentTarget]);
 
   useEffect(() => {

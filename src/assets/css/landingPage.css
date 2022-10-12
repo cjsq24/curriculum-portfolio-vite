@@ -4,6 +4,17 @@
   --light-white: #f5f1ed;
   --beige: #dad2bc;
   --brown: #a99985;
+  --gradient-brown-beige: linear-gradient(
+    128deg,
+    rgba(169, 153, 133, 1) 0%,
+    rgba(218, 210, 188, 1) 92%
+  );
+  --gradient-primary-secondary: linear-gradient(
+    100deg,
+    rgba(37, 35, 35, 1) 0%,
+    rgba(112, 121, 140, 1) 100%
+  );
+  --soft-primary: #3d3d3d;
 }
 
 .l-container {
@@ -26,6 +37,7 @@
     rgba(218, 210, 188, 1) 0%,
     rgba(245, 241, 237, 1) 92%
   );
+  background: rgba(112, 121, 140, 0.4);
   overflow: hidden;
 }
 
@@ -180,10 +192,6 @@
   margin: 0 auto;
 }
 
-.hidden-xs {
-  display: none;
-}
-
 .l-basic-information-item {
   display: flex;
   justify-content: space-between;
@@ -278,14 +286,21 @@
 .l-card-portfolio-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
   gap: 30px;
   margin: 20px;
+  padding: 20px;
+}
+
+.l-portfolio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   animation: toggleOpacity 0.4s ease-in;
 }
 
 .l-portfolio-card-content {
-  background: var(--brown);
+  background: var(--secondary);
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.2s;
@@ -295,7 +310,6 @@
 .l-portfolio-card-content picture {
   display: flex;
   justify-content: center;
-  /* pointer-events: none; */
 }
 
 .l-portfolio-card-content picture img {
@@ -306,13 +320,11 @@
 
 .l-portfolio-card-content footer {
   padding: 20px;
-  /* pointer-events: none; */
 }
 
 .l-portfolio-card-content footer div {
   display: flex;
   justify-content: space-between;
-  /* pointer-events: none; */
 }
 
 .l-portfolio-card-content footer span {
@@ -353,21 +365,99 @@
 }
 
 .l-experience-container {
-  background: rgb(169, 153, 133);
-  background: linear-gradient(
-    128deg,
-    rgba(169, 153, 133, 1) 0%,
-    rgba(218, 210, 188, 1) 92%
-  );
-  box-shadow: 0px 5px 40px 2px rgb(0 0 0 / 10%);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 30px auto;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  width: 50%;
   animation: slideBottomToTop 0.4s ease-out;
-  gap: 20px;
+}
+
+.l-experience-content {
+  display: grid;
+  grid-template-columns: 1fr 0.4fr 1fr;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.l-experience-card {
+  background: var(--secondary);
+  position: relative;
+  padding: 15px;
+  margin: 15px 0;
+  box-shadow: 1px 5px 10px 2px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+}
+
+.l-experience-card p {
+  position: relative;
+  z-index: 2;
+  color: var(--primary);
+}
+
+.l-experience-center {
+  width: 140px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.l-experience-line {
+  background-color: var(--soft-primary);
+  height: 100%;
+  width: 5px;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.l-experience-center {
+  margin: 0 auto;
+  gap: 0 20px;
+}
+
+.l-experience-date {
+  position: absolute;
+  top: 50px;
+  background-color: var(--soft-primary);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  color: var(--beige);
+}
+
+.l-experience-arrow {
+  position: absolute;
+  top: 50px;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  background-color: var(--secondary);
+}
+
+.l-experience-right-arrow {
+  top: 30px;
+  right: 0;
+  transform: rotate(45deg) translateX(15px);
+}
+
+.l-experience-left-arrow {
+  left: 0;
+  transform: rotate(45deg) translateX(-15px);
+}
+
+.l-experience-arrow-top {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 27px);
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  background-color: var(--primary);
+  transform: rotate(45deg) translateY(-10px);
 }
 
 .l-experience-item {
@@ -396,6 +486,10 @@
 .l-experience-item-border-top {
   border-top: 1px solid var(--primary);
   padding-top: 20px;
+}
+
+.l-2l {
+  grid-column: 2 / 3;
 }
 
 .l-contact-container {
@@ -494,6 +588,33 @@ label {
   transform: scale(1.1);
 }
 
+.l-header-title-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.l-header-title {
+  font-size: 26px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.l-header-title-bottom-line {
+  background: var(--primary);
+  height: 3px;
+  width: 90%;
+}
+
+.show-f-sm {
+  display: none;
+}
+
+.show-xs {
+  display: none;
+}
+
 @keyframes slideRightToLeft {
   from {
     opacity: 0;
@@ -547,40 +668,14 @@ label {
   }
 }
 
-/* @media (max-width: 850px) {
-  .l-about-me-content {
-    grid-template-columns: 4fr 6fr;
-  }
-  .l-skills-item {
-    grid-template-columns: 1fr 2fr 3fr;
-  }
-}
-
-@media (max-width: 740px) {
-  .l-about-me-content {
-    grid-template-columns: 1fr;
-  }
-  .l-skills-item {
-    grid-template-columns: 1fr 2fr 2fr;
-  }
-  .l-skills-text {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 500px) {
-  .l-skills-content {
-    padding: 10px 0;
-    margin: 30px 5px;
-  }
-  .l-skills-item {
-    padding: 5px 5px;
-  }
-} */
+/* @media queries */
 
 @media (max-width: 1200px) {
   .l-about-me-content {
     width: 70%;
+  }
+  .l-experience-content {
+    width: 95%;
   }
 }
 
@@ -588,11 +683,58 @@ label {
   .l-about-me-content {
     width: 80%;
   }
+  .l-experience-line {
+    display: none;
+  }
+  .l-experience-content {
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+    gap: 0 25px;
+  }
+  .l-experience-card {
+    grid-column: span 3;
+  }
+  .l-2l {
+    grid-column: auto;
+  }
+  .l-card-portfolio-container {
+    grid-template-columns: 1fr;
+    padding: 0 40px;
+  }
 }
 
 @media (max-width: 768px) {
   .l-about-me-content {
     width: 95%;
+  }
+  .l-experience-content {
+    grid-template-columns: 1fr;
+  }
+  .hidden-sm {
+    display: none;
+  }
+  .show-sm {
+    display: block;
+  }
+  .show-f-sm {
+    display: flex;
+  }
+  .l-experience-content {
+    padding: 10px 0;
+  }
+  .l-experience-center:not(.hidden-sm) {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    position: inherit;
+  }
+  .l-experience-date {
+    position: inherit;
+  }
+  .l-experience-arrow {
+    display: none;
+  }
+  .l-card-portfolio-container {
+    padding: 0;
   }
 }
 
@@ -619,7 +761,7 @@ label {
     width: 100%;
   }
 
-  .hidden-xs {
+  .show-xs {
     display: block;
   }
 }

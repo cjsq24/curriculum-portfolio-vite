@@ -7,8 +7,8 @@ import Testing from '../views/adminPanel/testing/Testing';
 import Home from '../views/landingPage/home/Home';
 import AboutMe from '../views/landingPage/aboutMe/AboutMe';
 import Skills from '../views/landingPage/skills/Skills';
-import Portfolio from '../views/landingPage/portfolio/Portfolio';
-import Experience from '../views/landingPage/experience/Experience';
+import Portfolio from '../views/landingPage/Portfolio';
+import Experience from '../views/landingPage/Experience';
 import ContactMe from '../views/landingPage/contactMe';
 
 const Navigation = () => {

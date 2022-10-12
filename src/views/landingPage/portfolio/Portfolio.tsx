@@ -3,6 +3,7 @@ import { portfolioList } from 'src/utils/constants';
 import { Modal } from 'src/components';
 import { EVisibilityModal, IPortfolio } from 'src/utils/types';
 import PortfolioItem from './components/PortfolioItem';
+import HeaderTitle from '../components/HeaderTitle';
 
 const Portfolio: React.FC = () => {
   const [visibilityModal, setVisibilityModal] = useState(
@@ -36,7 +37,8 @@ const Portfolio: React.FC = () => {
   };
 
   return (
-    <div className="l-container-content">
+    <div className="l-portfolio-container">
+      <HeaderTitle title="My Portfolio" />
       <Modal
         visibilityModal={visibilityModal}
         setVisibilityModal={setVisibilityModal}
@@ -45,7 +47,6 @@ const Portfolio: React.FC = () => {
           <PortfolioItem item={selectedPortfolio} isModal />
         )}
       </Modal>
-      <h1 className="l-title">My Portfolio</h1>
       <div className="l-card-portfolio-container">
         {portfolioList.map((portfolio, i) => (
           <PortfolioItem key={i} index={i} item={portfolio} />
