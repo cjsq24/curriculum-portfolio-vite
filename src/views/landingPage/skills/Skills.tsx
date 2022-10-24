@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import { skillList } from 'src/utils/constants';
 import { ESkillsType, EVisibilityModal, ISkillList } from 'src/utils/types';
-import SkillsList from './components/SkillsList';
-import SkillDetail from './components/SkillDetail/SkillDetail';
+import SkillsList from 'src/views/landingPage/skills/components/SkillList';
+import SkillDetail from 'src/views/landingPage/skills/components/SkillDetail';
 import HeaderTitle from '../components/HeaderTitle';
-
-console.log(skillList);
 
 const Skills = () => {
   const [visibilityModal, setVisibilityModal] = useState(
