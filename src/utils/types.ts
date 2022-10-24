@@ -4,6 +4,7 @@ export enum ESkillsType {
 }
 
 export interface ISkillList {
+  id: number;
   image: string[];
   name: string;
   description: string;

@@ -4,7 +4,7 @@ import { EVisibilityModal } from 'src/utils/types';
 interface IProps {
   visibilityModal: EVisibilityModal;
   setVisibilityModal: (value: EVisibilityModal) => void;
-  children?: JSX.Element;
+  children?: JSX.Element | JSX.Element[];
   onClose?: () => void;
 }
 
@@ -26,9 +26,10 @@ const Modal = ({
     const container = document.querySelector('.g-modal-container');
     const isClickInside = container?.contains(e.target as Node);
     if (!isClickInside) {
-      document.documentElement.style.setProperty('--opacity', '0');
+      const modal = document.querySelector('.g-modal') as HTMLElement;
+      modal.style.setProperty('--opacity', '0');
       setTimeout(() => {
-        document.documentElement.style.setProperty('--visibility', 'hidden');
+        modal.style.setProperty('--visibility', 'hidden');
       }, 200);
       setVisibilityModal(EVisibilityModal.Hidden);
       onClose?.();
@@ -37,8 +38,9 @@ const Modal = ({
 
   useEffect(() => {
     if (visibilityModal === 'visible') {
-      document.documentElement.style.setProperty('--visibility', 'visible');
-      document.documentElement.style.setProperty('--opacity', '1');
+      const modal = document.querySelector('.g-modal') as HTMLElement;
+      modal.style.setProperty('--visibility', 'visible');
+      modal.style.setProperty('--opacity', '1');
     }
   }, [visibilityModal]);
 

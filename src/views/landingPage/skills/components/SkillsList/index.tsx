@@ -4,6 +4,7 @@ import { ISkillList } from 'src/utils/types';
 interface IProps {
   title: string;
   skillData: ISkillList[];
+  selectSkill: (value: ISkillList) => void;
 }
 
 const SkillsList = ({ title, skillData }: IProps) => {
@@ -14,7 +15,7 @@ const SkillsList = ({ title, skillData }: IProps) => {
       </div>
       <article className="l-skills-items">
         {skillData.map((skill, i) => (
-          <div key={i} className="l-skills-item">
+          <div key={i} className="l-skills-item" id={`skill-${skill.id}`}>
             <div className="l-skills-icon-container">
               {skill.image.map((image, o) => (
                 <img

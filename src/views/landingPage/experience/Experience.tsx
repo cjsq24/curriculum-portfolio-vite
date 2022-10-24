@@ -7,7 +7,7 @@ const Experience = () => {
   return (
     <section className="l-experience-container">
       <HeaderTitle title="My Work Experience" />
-      <div className="l-experience-content">
+      <article className="l-experience-content">
         {experienceList.map((exp, idx) => (
           <React.Fragment key={idx}>
             <div className="l-experience-center show-f-sm">
@@ -29,7 +29,7 @@ const Experience = () => {
             )}
           </React.Fragment>
         ))}
-      </div>
+      </article>
     </section>
   );
 };

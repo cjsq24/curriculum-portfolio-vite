@@ -37,7 +37,7 @@ const Portfolio: React.FC = () => {
   };
 
   return (
-    <div className="l-portfolio-container">
+    <section className="l-portfolio-container">
       <HeaderTitle title="My Portfolio" />
       <Modal
         visibilityModal={visibilityModal}
@@ -52,7 +52,7 @@ const Portfolio: React.FC = () => {
           <PortfolioItem key={i} index={i} item={portfolio} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -4,48 +4,56 @@ const lorem = `Lorem Ipsum is simply dummy text of the printing and typesetting 
 
 export const skillList: ISkillList[] = [
   {
+    id: Math.floor(Math.random() * 100),
     image: ['php'],
     name: 'PHP',
     description: lorem,
     type: ESkillsType.Hard,
   },
   {
+    id: Math.floor(Math.random() * 100),
     image: ['javascript'],
     name: 'JavaScript',
     description: lorem,
     type: ESkillsType.Hard,
   },
   {
+    id: Math.floor(Math.random() * 100),
     image: ['html5', 'css3'],
     name: 'HTML5/CSS3',
     description: lorem,
     type: ESkillsType.Hard,
   },
   {
+    id: Math.floor(Math.random() * 100),
     image: ['reactJs'],
     name: 'React JS',
     description: lorem,
     type: ESkillsType.Hard,
   },
   {
+    id: Math.floor(Math.random() * 100),
     image: ['reactNative'],
     name: 'React Native',
     description: lorem,
     type: ESkillsType.Hard,
   },
   {
+    id: Math.floor(Math.random() * 100),
     image: ['nodeJs'],
     name: 'Node JS',
     description: lorem,
     type: ESkillsType.Hard,
   },
   {
+    id: Math.floor(Math.random() * 100),
     image: ['laravel'],
     name: 'Laravel',
     description: lorem,
     type: ESkillsType.Hard,
   },
   {
+    id: Math.floor(Math.random() * 100),
     image: ['nodeJs'],
     name: 'English B2',
     description: lorem,
