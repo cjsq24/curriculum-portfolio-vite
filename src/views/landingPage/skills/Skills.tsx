@@ -1,114 +1,67 @@
-import images from '../../../assets/images';
+import { useState, useEffect } from 'react';
+import { skillList } from 'src/utils/constants';
+import { ESkillsType, EVisibilityModal, ISkillList } from 'src/utils/types';
+import SkillsList from './components/SkillsList';
+import SkillDetail from './components/SkillDetail/SkillDetail';
+import HeaderTitle from '../components/HeaderTitle';
 
-interface ISkillList {
-  image: string[];
-  name: string;
-  experience: string;
-  description: string;
-}
-
-const lorem = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`;
-
-const skillList: ISkillList[] = [
-  {
-    image: ['php'],
-    name: 'PHP',
-    experience: 'Medium (3 years)',
-    description: lorem,
-  },
-  {
-    image: ['javascript'],
-    name: 'JavaScript',
-    experience: 'Medium (4 years)',
-    description: lorem,
-  },
-  {
-    image: ['html5', 'css3'],
-    name: 'HTML5/CSS3',
-    experience: 'Medium (3 years)',
-    description: lorem,
-  },
-  {
-    image: ['reactJs'],
-    name: 'React JS',
-    experience: 'Medium (1 year)',
-    description: lorem,
-  },
-  {
-    image: ['reactNative'],
-    name: 'React Native',
-    experience: 'Medium (1 year)',
-    description: lorem,
-  },
-  {
-    image: ['nodeJs'],
-    name: 'Node JS',
-    experience: 'Medium (1 year)',
-    description: lorem,
-  },
-  {
-    image: ['laravel'],
-    name: 'Laravel',
-    experience: 'Noob',
-    description: lorem,
-  },
-];
+console.log(skillList);
 
 const Skills = () => {
-  const showDescription = (index: number) => {
-    //Cerramos los divs de descripción
-    const skillDescriptionList = document.querySelectorAll(
-      `.l-skills-description-container`
-    ) as NodeListOf<HTMLInputElement>;
-    skillDescriptionList.forEach((ele) => {
-      ele.style.height = '0';
-    });
+  const [visibilityModal, setVisibilityModal] = useState(
+    EVisibilityModal.Hidden
+  );
+  const [skillSelected, setSkillSelected] = useState<ISkillList>();
 
-    //abrimos el div seleccionado
-    const div = document.querySelector(
-      `#l-skills-description-${index}`
-    ) as HTMLInputElement;
-    div.style.height = div.clientHeight ? '0' : div.scrollHeight + 'px';
-  };
+  function getSkill(e: Event) {
+    const target = e?.target as HTMLElement;
+    if (target.tagName === 'ARTICLE') return;
+    let parent = target.parentElement;
+    while (parent?.className !== 'l-skills-item') {
+      parent = parent!.parentElement;
+    }
+    const index = parent.id.split('-')[1];
+    setSkillSelected(skillList.find(({ id }) => id === parseInt(index)));
+    setVisibilityModal(EVisibilityModal.Visible);
+  }
+
+  useEffect(() => {
+    const skillsContainer = document.querySelectorAll(
+      '.l-skills-items'
+    ) as NodeListOf<HTMLElement>;
+    skillsContainer[0].addEventListener('click', getSkill);
+    skillsContainer[1].addEventListener('click', getSkill);
+
+    return () => {
+      skillsContainer[0].removeEventListener('click', getSkill);
+      skillsContainer[1].removeEventListener('click', getSkill);
+    };
+  }, []);
 
   return (
-    <div className="l-skills-container">
-      <h1 className="l-title">Professional Skills</h1>
+    <section className="l-skills-container">
+      <HeaderTitle title="My Professional Skills" />
       <div className="l-skills-content">
-        {skillList.map((skill, i) => (
-          <div
-            key={i}
-            className="l-skills-item"
-            onClick={() => showDescription(i)}
-          >
-            <div className="l-skills-icon-container">
-              {skill.image.map((image, o) => (
-                <img
-                  key={o}
-                  src={images[image]}
-                  alt={image}
-                  style={{ height: 40, width: 40 }}
-                />
-              ))}
-            </div>
-            <div className="l-skills-text-container">
-              <span className="l-skills-text">{skill.name}</span>
-            </div>
-            <div className="l-skills-experience-container">
-              <span className="l-skills-text" style={{ fontWeight: 'normal' }}>
-                {skill.experience}
-              </span>
-            </div>
-            <div
-              className="l-skills-description-container"
-              id={`l-skills-description-${i}`}
-            >
-              <p style={{ padding: '10px 10px' }}>{skill.description}</p>
-            </div>
-          </div>
-        ))}
+        <SkillDetail
+          visibilityModal={visibilityModal}
+          setVisibilityModal={setVisibilityModal}
+          skill={skillSelected}
+        />
+        <SkillsList
+          title="Hard Skills"
+          skillData={skillList.filter(({ type }) => type === ESkillsType.Hard)}
+          selectSkill={setSkillSelected}
+        />
+        <SkillsList
+          title="Soft Skills"
+          skillData={skillList.filter(({ type }) => type === ESkillsType.Soft)}
+          selectSkill={setSkillSelected}
+        />
+        <footer>
+          <span>Feel free to click in the skills :)</span>
+        </footer>
       </div>
-    </div>
+    </section>
   );
 };
 

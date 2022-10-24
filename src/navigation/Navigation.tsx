@@ -4,10 +4,12 @@ import PrivateRoute from './PrivateRoute';
 import LandingRoute from './LandingRoute';
 import Dashboard from '../views/adminPanel/Dashboard/Dashboard';
 import Testing from '../views/adminPanel/testing/Testing';
-import Home from '../views/landingPage/home/Home';
-import AboutMe from '../views/landingPage/aboutMe/AboutMe';
-import Skills from '../views/landingPage/skills/Skills';
-import Portfolio from '../views/landingPage/portfolio/Portfolio';
+import Home from '../views/landingPage/Home';
+import AboutMe from '../views/landingPage/AboutMe';
+import Skills from '../views/landingPage/Skills';
+import Portfolio from '../views/landingPage/Portfolio';
+import Experience from '../views/landingPage/Experience';
+import ContactMe from '../views/landingPage/ContactMe';
 
 const Navigation = () => {
   return (
@@ -22,6 +24,8 @@ const Navigation = () => {
         <LandingRoute path="/about-me" component={AboutMe} />
         <LandingRoute path="/skills" component={Skills} />
         <LandingRoute path="/portfolio" component={Portfolio} />
+        <LandingRoute path="/experience" component={Experience} />
+        <LandingRoute path="/contact-me" component={ContactMe} />
 
         <Route path="*">
           <h1>Error 404</h1>
