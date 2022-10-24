@@ -4,12 +4,12 @@ import PrivateRoute from './PrivateRoute';
 import LandingRoute from './LandingRoute';
 import Dashboard from '../views/adminPanel/Dashboard/Dashboard';
 import Testing from '../views/adminPanel/testing/Testing';
-import Home from '../views/landingPage/Home';
-import AboutMe from '../views/landingPage/AboutMe';
-import Skills from '../views/landingPage/Skills';
-import Portfolio from '../views/landingPage/Portfolio';
-import Experience from '../views/landingPage/Experience';
-import ContactMe from '../views/landingPage/ContactMe';
+import Home from '../views/landingPage/home';
+import AboutMe from '../views/landingPage/aboutMe';
+import Skills from '../views/landingPage/skills';
+import Portfolio from '../views/landingPage/portfolio';
+import Experience from '../views/landingPage/experience';
+import ContactMe from '../views/landingPage/contactMe';
 
 const Navigation = () => {
   return (
