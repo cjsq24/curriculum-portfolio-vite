@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { Layout, Menu, Dropdown, Breadcrumb } from 'antd';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import userImage from '../../assets/user-image.png';
@@ -15,12 +15,12 @@ const options = (
     <Menu.Divider />
     <Menu.Item key="3">Logout</Menu.Item>
   </Menu>
-);
+); */
 
-const Header = ({ collapsed, toggle }: IProps) => {
+const Header = (/* { collapsed, toggle }: IProps */) => {
   return (
     <>
-      <Layout.Header className="c-header">
+      {/* <Layout.Header className="c-header">
         {React.createElement(
           collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
           {
@@ -42,7 +42,7 @@ const Header = ({ collapsed, toggle }: IProps) => {
           <Breadcrumb.Item>Application Center</Breadcrumb.Item>
           <Breadcrumb.Item>An Application</Breadcrumb.Item>
         </Breadcrumb>
-      </div>
+      </div> */}
     </>
   );
 };

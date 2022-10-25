@@ -4,7 +4,7 @@ import 'src/assets/css/general-styles.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const LandingPage: React.FC = ({ children }) => {
+const LandingPage = ({ children }: { children: any }) => {
   return (
     <div className="l-container">
       <header className="l-header">

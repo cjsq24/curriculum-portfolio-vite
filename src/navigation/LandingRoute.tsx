@@ -1,18 +1,7 @@
-import { Route, RouteProps } from 'react-router-dom';
 import LandingPage from '../layouts/landingPage/LandingPage';
 
-const LandingRoute = ({ component: Component, ...rest }: RouteProps) => {
-  if (!Component) return null;
-  return (
-    <Route
-      {...rest}
-      render={(props) => (
-        <LandingPage>
-          <Component {...props} />
-        </LandingPage>
-      )}
-    />
-  );
+const LandingRoute = ({ component }: { component: React.ReactNode }) => {
+  return <LandingPage>{component}</LandingPage>;
 };
 
 export default LandingRoute;

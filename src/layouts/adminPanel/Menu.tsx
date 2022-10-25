@@ -1,15 +1,16 @@
-import React from 'react';
+/* import React from 'react';
 import { Menu } from 'antd';
 import {
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
 } from '@ant-design/icons';
-import { /* Link,  */ NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; */
 
 const MyMenu = () => {
   return (
-    <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+    <>
+      {/* <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
       <Menu.Item key="1" icon={<UserOutlined />}>
         <NavLink to="/admin-panel/dashboard">Dashboard</NavLink>
       </Menu.Item>
@@ -19,7 +20,8 @@ const MyMenu = () => {
       <Menu.Item key="3" icon={<UploadOutlined />}>
         nav 3
       </Menu.Item>
-    </Menu>
+    </Menu> */}
+    </>
   );
 };
 
