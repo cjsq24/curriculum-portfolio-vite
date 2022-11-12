@@ -722,6 +722,9 @@ label {
   .l-contact-card {
     width: 60%;
   }
+  .l-skills-content {
+    width: 60%;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -746,6 +749,9 @@ label {
     padding: 0 40px;
   }
   .l-contact-card {
+    width: 80%;
+  }
+  .l-skills-content {
     width: 80%;
   }
 }
@@ -786,6 +792,9 @@ label {
   }
   .l-contact-card {
     width: 90%;
+  }
+  .l-skills-content {
+    width: 95%;
   }
 }
 
