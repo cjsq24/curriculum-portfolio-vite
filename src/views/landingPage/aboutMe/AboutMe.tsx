@@ -6,19 +6,20 @@ interface IBasicInfo {
 }
 
 const basicInfo: IBasicInfo[] = [
-  { label: 'Profession', value: 'Computer Engineer' },
-  { label: 'Country', value: 'Portuguesa - Venezuela' },
-  { label: 'Age', value: '26 years' },
+  { label: 'Profesión', value: 'Ingeniero en Informática' },
+  { label: 'País', value: 'Caracas - Venezuela' },
+  { label: 'Edad', value: '27 años' },
+  { label: 'Cel', value: '+58 412 522-1478' },
 ];
 
 const AboutMe = () => {
   return (
     <section className="l-about-me-container">
-      <HeaderTitle title="Information Details About Me" />
+      <HeaderTitle title="Información acerca de mi" />
       <article className="l-about-me-content">
         <div className="l-about-basic-row">
           <div className="l-basic-information">
-            <span className="l-about-me-content-title">Basic information</span>
+            <span className="l-about-me-content-title">Información Básica</span>
             <div className="l-about-horizontal-line" />
             {basicInfo.map((data, i) => (
               <div key={i} className="l-basic-information-item">
@@ -30,34 +31,41 @@ const AboutMe = () => {
           <div className="l-about-vertical-line" />
           <div className="l-about-horizontal-line show-xs" />
           <div className="l-about-me-information">
-            <span className="l-about-me-content-title">About me</span>
+            <span className="l-about-me-content-title">Acerca de mi</span>
             <div className="l-about-horizontal-line" />
             <span className="l-about-me-paragraph">
-              ¡Hola! Mi nombre es Carlos Sosa. Soy Desarrollador Web y Móvil.
-              Cuento con más de 4 años de experiencia en el mundo del
-              desarrollo, trabajando con PHP, JavaScript y MySql (Usando
-              frameworks como JQuery, Bootstrap y ahora aprendiendo Laravel).
-              Tengo un año aproximadamente trabajando en proyectos con React,
-              React Native y Node JS. Quiero seguir especializándome en estas
-              últimas tecnologías y así seguir adquiriendo más experiencia,
-              siempre abierto a aprender. Me gusta trabajar en equipo, me gusta
-              el análisis y la resolución de problemas más allá de sólo
-              programar.
+              🖐 ¡Hola! Mi nombre es Carlos Sosa. Soy{' '}
+              <b>Desarrollador Web y Móvil</b>. 💻📱
+              <br />
+              <br />
+              Cuento con más de 5 años de experiencia en el mundo de la
+              programación, trabajando en las siguientes tecnologías:
+              <b style={{ marginLeft: 5 }}>
+                (Javascript | Typescript | React Js | React Native | Node JS |
+                PHP | HTML5 | CSS3 | Git)
+              </b>
+              . Mi principal fuerte es Javascript 💪 <br />
+              <br />
+              En mi carrera profesional me he desempeñado en varios roles tales
+              como Frontend, Backend y Full Stack, pero últimamente he estado
+              trabajando únicamente como Frontend con React Native, adentrándome
+              más en el mundo de las Aplicaciones Móviles. 📱
+              <br />
+              <br />
+              Soy un apasionado del desarrollo. Me gusta mucho la resolución de
+              problemas, lo cual puedo considerar como una de mis principales
+              fortalezas. Me gusta compartir mis conocimientos y siempre estoy
+              abierto a aprender. 💪
             </span>
           </div>
         </div>
         <div className="l-about-horizontal-line" />
         <div className="l-about-me-interesting">
           <span>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry`s standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            Mi principal objetivo es seguir especializandome como Frontend. En
+            mis intereses están aprender NextJS para web y Kotlin para Android.
+            También mejorar mi inglés para aumentar mi probabilidad de mejores
+            oportunidades. 😀
           </span>
         </div>
       </article>

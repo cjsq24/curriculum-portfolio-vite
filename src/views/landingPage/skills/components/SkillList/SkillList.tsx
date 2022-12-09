@@ -22,7 +22,7 @@ const SkillsList = ({ title, skillData }: IProps) => {
                   key={o}
                   src={images[image]}
                   alt={image}
-                  style={{ height: 40, width: 40 }}
+                  style={{ height: 40, width: 40, backgroundSize: 'contain' }}
                 />
               ))}
             </div>

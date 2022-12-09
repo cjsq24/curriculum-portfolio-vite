@@ -1,4 +1,5 @@
 import avatar from 'src/assets/developer.jpg';
+import SocialSection from '../components/SocialSection';
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
           <span className="home-text-name">Carlos J. Sosa Q.</span>
           <span className="home-text-profession">Frontend Developer</span>
         </div>
+        <SocialSection />
       </div>
     </div>
   );

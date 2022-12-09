@@ -38,7 +38,7 @@ const Skills = () => {
 
   return (
     <section className="l-skills-container">
-      <HeaderTitle title="My Professional Skills" />
+      <HeaderTitle title="Mis habilidades profesionales" />
       <div className="l-skills-content">
         <SkillDetail
           visibilityModal={visibilityModal}
@@ -46,17 +46,19 @@ const Skills = () => {
           skill={skillSelected}
         />
         <SkillsList
-          title="Hard Skills"
+          title="Habilidades duras"
           skillData={skillList.filter(({ type }) => type === ESkillsType.Hard)}
           selectSkill={setSkillSelected}
         />
         <SkillsList
-          title="Soft Skills"
+          title="Habilidades blandas"
           skillData={skillList.filter(({ type }) => type === ESkillsType.Soft)}
           selectSkill={setSkillSelected}
         />
         <footer>
-          <span>Feel free to click in the skills :)</span>
+          <span>
+            Puedes pulsar sobre las habilidades para obtener detalles :)
+          </span>
         </footer>
       </div>
     </section>

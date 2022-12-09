@@ -52,6 +52,18 @@
   animation: slideLeftToRight 0.3s linear;
 }
 
+.l-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.l-footer-content img {
+  width: 40px;
+  height: 40px;
+}
+
 .home-container {
   position: relative;
   height: 100%;
@@ -225,7 +237,7 @@
   background: linear-gradient(
     128deg,
     var(--secondary) 0%,
-    rgba(111, 120, 139, 0.4) 92%
+    rgba(111, 120, 139, 0.1) 92%
   );
   box-shadow: 0px 5px 40px 2px rgb(0 0 0 / 25%);
   border-radius: 10px;
@@ -274,6 +286,7 @@
 .l-skills-text {
   font-size: 16px;
   font-weight: bold;
+  margin-left: 5px;
 }
 
 .l-skills-content footer {
@@ -523,6 +536,8 @@
   align-items: center;
   flex-direction: column;
   animation: slideBottomToTop 0.4s ease-out;
+  position: relative;
+  height: 100%;
 }
 
 .l-contact-card {
@@ -655,6 +670,33 @@ label {
 
 .show-xs {
   display: none;
+}
+
+.hide-xs {
+  display: block;
+}
+
+.social-media-container {
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s opacity;
+}
+
+.social-media-container img {
+  width: 50px;
+  height: 50px;
+  transition: 0.3s opacity;
+  opacity: 0.3;
+}
+
+.social-media-container img:hover {
+  opacity: 1;
 }
 
 @keyframes slideRightToLeft {
@@ -823,6 +865,10 @@ label {
 
   .show-xs {
     display: block;
+  }
+
+  .hide-xs {
+    display: none;
   }
 }
 

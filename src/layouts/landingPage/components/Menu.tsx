@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 const menuList = [
-  { title: 'Home', url: '/home' },
-  { title: 'About Me', url: '/about-me' },
-  { title: 'Skills', url: '/skills' },
-  { title: 'Portfolio', url: '/portfolio' },
-  { title: 'Experience', url: '/experience' },
-  { title: 'Contact Me', url: '/contact-me' },
+  { title: 'Inicio', url: '/home' },
+  { title: 'Acerca de mi', url: '/about-me' },
+  { title: 'Habilidades', url: '/skills' },
+  //{ title: 'Portfolio', url: '/portfolio' },
+  { title: 'Experiencia', url: '/experience' },
+  { title: 'Contáctame', url: '/contact-me' },
 ];
 
 type TProps = {

@@ -6,7 +6,7 @@ import ExperienceCard from './components/ExperienceCard';
 const Experience = () => {
   return (
     <section className="l-experience-container">
-      <HeaderTitle title="My Work Experience" />
+      <HeaderTitle title="Mi experiencia de trabajo" />
       <article className="l-experience-content">
         {experienceList.map((exp, idx) => (
           <React.Fragment key={idx}>
