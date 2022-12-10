@@ -10,6 +10,7 @@ const basicInfo: IBasicInfo[] = [
   { label: 'País', value: 'Caracas - Venezuela' },
   { label: 'Edad', value: '27 años' },
   { label: 'Cel', value: '+58 412 522-1478' },
+  { label: 'Correo', value: 'carlossosaq24@gmail.com' },
 ];
 
 const AboutMe = () => {
